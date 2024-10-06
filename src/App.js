@@ -35,7 +35,7 @@ function App() {
         showalert("Dark mode enabled", "success");
         changebuttoncolor(color, btncolor = "blue", fontcolor = "white");
         changetextcolor("white");
-        changeaboutcolor(color = "white", fontcolor = "#088cab");
+        changeaboutcolor(color = "white", fontcolor = "#054655");
 
       }
       else {
@@ -117,7 +117,7 @@ function App() {
     <Router>
 
 
-      <Navbar title="TexUtils" aboutText="about Textutils" mode={Mode} togglemode={togglemode} />
+      <Navbar title="TexUtils" aboutText="About" mode={Mode} togglemode={togglemode} />
       <Alert alert={alert} />
 
 

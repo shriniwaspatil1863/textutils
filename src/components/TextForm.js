@@ -82,7 +82,7 @@ setwordcount(false);
             <div>
                 <h1 style={{ color: props.textcolor }} className='mb-2'>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea className="form-control" id="Mybox" rows="8" value={props.text} onChange={handlechange} style={{ backgroundColor: props.mode === 'dark' ? '#088cab' : 'white', color: props.mode === 'dark' ? 'white' : 'black', fontSize: "18px" }}></textarea>
+                    <textarea className="form-control" id="Mybox" rows="8" value={props.text} onChange={handlechange} style={{ backgroundColor: props.mode === 'dark' ? '#054655' : 'white', color: props.mode === 'dark' ? 'white' : 'black', fontSize: "18px" }}></textarea>
 
                 </div>
                 <button disabled={props.text.length === 0} className={`btn btn-primary  mx-1 my-1`} onClick={handleupclick} style={{ backgroundColor: props.btncolor.buttoncolor, color: props.btncolor.fontcolor }}>convert to uppercase</button>
