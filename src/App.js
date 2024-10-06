@@ -10,7 +10,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  
+
 } from "react-router-dom";
 function App() {
   const [Mode, setMode] = useState('light');
@@ -35,8 +35,8 @@ function App() {
         showalert("Dark mode enabled", "success");
         changebuttoncolor(color, btncolor = "blue", fontcolor = "white");
         changetextcolor("white");
-        changeaboutcolor(color="white",fontcolor="#088cab");
-        
+        changeaboutcolor(color = "white", fontcolor = "#088cab");
+
       }
       else {
         setMode('light');
@@ -44,8 +44,8 @@ function App() {
         showalert("light mode enabled", "success")
         changebuttoncolor(color, btncolor = "blue", fontcolor = "white");
         changetextcolor("black");
-        changeaboutcolor(color="black",fontcolor="white")
-       
+        changeaboutcolor(color = "black", fontcolor = "white")
+
 
       }
       // #092f5d
@@ -53,7 +53,7 @@ function App() {
     else {
       changebuttoncolor(color, btncolor, fontcolor);
       changetextcolor("black");
-      changeaboutcolor(fontcolor,btncolor)
+      changeaboutcolor(fontcolor, btncolor)
     }
 
 
@@ -92,24 +92,24 @@ function App() {
     fontcolor: "white"
   });
 
-  const [textcolor,settextcolor]=useState("black");
+  const [textcolor, settextcolor] = useState("black");
 
-  const changetextcolor =(color)=>{
+  const changetextcolor = (color) => {
 
-settextcolor(color)
+    settextcolor(color)
 
   }
 
-  const [aboutcolor,setaboutcolor]=useState({
-    color:"black",
-    backgroundColor:"white"
+  const [aboutcolor, setaboutcolor] = useState({
+    color: "black",
+    backgroundColor: "white"
   })
 
-  const changeaboutcolor=(color,backgroundColor)=>{
+  const changeaboutcolor = (color, backgroundColor) => {
 
     setaboutcolor({
-      color:color,
-      backgroundColor:backgroundColor
+      color: color,
+      backgroundColor: backgroundColor
     })
   }
   return (
@@ -125,11 +125,11 @@ settextcolor(color)
 
           <Route
             path="/"
-            element={<TextForm heading="Try Textutils - Word Counter, Character Counter, Remove Extra Spaces" mode={Mode} showalert={showalert} togglemode={togglemode} btncolor={btncolor} textcolor={textcolor}/>}
+            element={<TextForm heading="Try Textutils - Word Counter, Character Counter, Remove Extra Spaces" mode={Mode} showalert={showalert} togglemode={togglemode} btncolor={btncolor} textcolor={textcolor} />}
           />
           <Route
             path="/about"
-            element={<About togglemode={togglemode} mode={Mode} aboutcolor={aboutcolor}/>}
+            element={<About togglemode={togglemode} mode={Mode} aboutcolor={aboutcolor} />}
           />
         </Routes>
       </div>

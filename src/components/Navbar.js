@@ -24,13 +24,13 @@ export default function Navbar(props) {
 
         </div>
         <div className="d-flex">
-          <div className="bg-primary rounded mx-2" style={{ height: "20px", width: "20px" , cursor:'pointer'}} onClick={() => { props.togglemode('primary',"darkblue","white")}} ></div>
-          <div className="bg-success   rounded mx-2" style={{ height: "20px", width: "20px",cursor:'pointer' }} onClick={() => { props.togglemode('success',"#96ff19","black") }}></div>
-          <div className="bg-danger rounded mx-2" style={{ height: "20px", width: "20px",cursor:'pointer' }} onClick={() => { props.togglemode('danger','pink','black') }}></div>
-          <div className="bg-warning rounded mx-2" style={{ height: "20px", width: "20px",cursor:"pointer" }} onClick={() => { props.togglemode('warning',"orange","black") }}></div>
+          <div className="bg-primary rounded mx-2" style={{ height: "20px", width: "20px", cursor: 'pointer' }} onClick={() => { props.togglemode('primary', "darkblue", "white") }} ></div>
+          <div className="bg-success   rounded mx-2" style={{ height: "20px", width: "20px", cursor: 'pointer' }} onClick={() => { props.togglemode('success', "#96ff19", "black") }}></div>
+          <div className="bg-danger rounded mx-2" style={{ height: "20px", width: "20px", cursor: 'pointer' }} onClick={() => { props.togglemode('danger', 'pink', 'black') }}></div>
+          <div className="bg-warning rounded mx-2" style={{ height: "20px", width: "20px", cursor: "pointer" }} onClick={() => { props.togglemode('warning', "orange", "black") }}></div>
         </div>
         <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-          <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={() => { props.togglemode(null) }} style={{cursor:"pointer"}} />
+          <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={() => { props.togglemode(null) }} style={{ cursor: "pointer" }} />
           <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Toggle Mode</label>
         </div>
       </div>
