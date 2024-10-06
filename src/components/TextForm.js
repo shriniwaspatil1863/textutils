@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 export default function TextForm(props) {
+    const [wordcountclicked,setwordcount]=useState(false);
     const handleupclick = () => {
 
         // console.log("uppercase was clicked"+text)
@@ -26,9 +27,9 @@ export default function TextForm(props) {
 
         let newtext = props.text.replace(props.text, "")
         props.setText(newtext);
-        setcountlist({})
-        props.showalert("Text cleared", "success")
-
+        setcountlist({});
+        props.showalert("Text cleared", "success");
+setwordcount(false);
     }
     const wordCounter = () => {
         let newlist = props.text.split(/\s+/);
@@ -49,7 +50,8 @@ export default function TextForm(props) {
         }
         let wordcounts = wordlists;
         setcountlist(wordcounts)
-        props.showalert("word count displayed below", "success")
+        props.showalert("word count displayed below", "success");
+        setwordcount(true);
     };
     const speak = () => {
 
@@ -64,14 +66,14 @@ export default function TextForm(props) {
     }
     const removespaces = () => {
         let newtext = props.text.split(/[ ]+/);
-       props.props.setText(newtext.join(" ")
+        props.props.setText(newtext.join(" ")
         )
 
         props.showalert("spaces removed successfully", "success")
 
     }
 
-    
+
 
     const [wordcounts, setcountlist] = useState({});
     return (
@@ -97,14 +99,23 @@ export default function TextForm(props) {
                 <h2 style={{ color: props.textcolor }}>Your Text summary</h2>
                 <p style={{ color: props.textcolor }}><b>{props.text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {props.text.length} characters</b></p>
                 <p style={{ color: props.textcolor }}><b>{0.008 * props.text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes required to read</b></p>
-                <p style={{ fontSize: "20px", color: props.textcolor }}><b style={{ fontSize: '25px' }}>Occurences of words</b>
-                    {Object.entries(wordcounts).map(([word, count], index) => (
+                <p style={{ fontSize: "20px", color: props.textcolor }}>
+                    <h2>Word Count</h2>
+                   {props.text.length>0?(wordcountclicked?( Object.entries(wordcounts).map(([word, count], index) => (
+                            <div key={index}>
+                                {word} : {count}
+                            </div>))
+                   ):("click on count word button")):
+                   ("Nothing to Preview")
+                }
+                </p>
+                {/* {Object.entries(wordcounts).map(([word, count], index) => (
                         <div key={index}>
                             {word} :-     {count}{"\n"}
                         </div>
-                    ))}</p>
-                <h2 style={{ color: props.textcolor }}>Preview</h2>
-                <p style={{ color: props.textcolor, fontSize: '17px' }}>{props.text.length > 0 ? props.text : "Nothing to Preview"}</p>
+                    ))}</p> */}
+                <h2 style={{ color: props.textcolor }} className='mt-3'>Preview</h2>
+                <p style={{ color: props.textcolor, fontSize: '17px' }} >{props.text.length > 0 ? props.text : "Nothing to Preview"}</p>
 
 
             </div>

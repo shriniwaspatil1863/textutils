@@ -125,7 +125,7 @@ function App() {
         <Routes>
 
           <Route
-            path="/textform"
+            path="/"
             element={<TextForm heading="Try Textutils - Word Counter, Character Counter, Remove Extra Spaces" mode={Mode} showalert={showalert} togglemode={togglemode} btncolor={btncolor} textcolor={textcolor} setText={setText} text={text}/>}
           />
           <Route
