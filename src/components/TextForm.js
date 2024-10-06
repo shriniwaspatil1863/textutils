@@ -13,6 +13,7 @@ export default function TextForm(props) {
 
         console.log("onchange done");
         props.setText(event.target.value);
+        setwordcount(false);
 
 
     }
@@ -99,8 +100,9 @@ setwordcount(false);
                 <h2 style={{ color: props.textcolor }}>Your Text summary</h2>
                 <p style={{ color: props.textcolor }}><b>{props.text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {props.text.length} characters</b></p>
                 <p style={{ color: props.textcolor }}><b>{0.008 * props.text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes required to read</b></p>
-                <p style={{ fontSize: "20px", color: props.textcolor }}>
+                <p style={{ fontSize: "17px", color: props.textcolor }}>
                     <h2>Word Count</h2>
+                    <b>
                    {props.text.length>0?(wordcountclicked?( Object.entries(wordcounts).map(([word, count], index) => (
                             <div key={index}>
                                 {word} : {count}
@@ -108,6 +110,7 @@ setwordcount(false);
                    ):("click on count word button")):
                    ("Nothing to Preview")
                 }
+                </b>
                 </p>
                 {/* {Object.entries(wordcounts).map(([word, count], index) => (
                         <div key={index}>
@@ -115,7 +118,7 @@ setwordcount(false);
                         </div>
                     ))}</p> */}
                 <h2 style={{ color: props.textcolor }} className='mt-3'>Preview</h2>
-                <p style={{ color: props.textcolor, fontSize: '17px' }} >{props.text.length > 0 ? props.text : "Nothing to Preview"}</p>
+                <p style={{ color: props.textcolor, fontSize: '17px' }} >{props.text.length > 0 ? props.text : <b>Nothing to preview</b>}</p>
 
 
             </div>
